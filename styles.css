@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.parallax-container {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    perspective-origin: 0 0;
+}
+
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-1px) scale(2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    transform: translateZ(0);
+    z-index: 10;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ff69b4, #9370db, #4169e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #9370db;
+}
+
+.hero {
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ff69b4, #9370db, #4169e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.games-section {
+    padding: 100px 0;
+}
+
+.games-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.genre-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.love-genre .genre-title {
+    background: linear-gradient(to right, #ff69b4, #e84393);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.thriller-genre .genre-title {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroic-genre .genre-title {
+    background: linear-gradient(to right, #f5af19, #f12711);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.adventure-genre .genre-title {
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.love-genre .game-card {
+    border-top: 3px solid #ff69b4;
+}
+
+.thriller-genre .game-card {
+    border-top: 3px solid #6a11cb;
+}
+
+.heroic-genre .game-card {
+    border-top: 3px solid #f5af19;
+}
+
+.adventure-genre .game-card {
+    border-top: 3px solid #11998e;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.game-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.game-description {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+.play-now-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    align-self: center;
+}
+
+.love-genre .play-now-btn {
+    background: linear-gradient(to right, #ff69b4, #e84393);
+    color: #ffffff;
+}
+
+.thriller-genre .play-now-btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+}
+
+.heroic-genre .play-now-btn {
+    background: linear-gradient(to right, #f5af19, #f12711);
+    color: #ffffff;
+}
+
+.adventure-genre .play-now-btn {
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    color: #ffffff;
+}
+
+.play-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.coming-soon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    z-index: 2;
+}
+
+footer {
+    background: #0a0a0a;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ff69b4, #9370db, #4169e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    background: #9370db;
+}
+
+.social-links a i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #bbbbbb;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    color: #777777;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin-left: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .genre-title {
+        font-size: 2rem;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Empty placeholder for game cards that are coming soon */
+.empty-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.empty-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent,
+        transparent,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent,
+        transparent,
+        transparent
+    );
+    transform: rotate(30deg);
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    from {
+        transform: rotate(30deg) translate(-100%, -100%);
+    }
+    to {
+        transform: rotate(30deg) translate(100%, 100%);
+    }
+}
+
+.empty-card-content {
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.empty-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.empty-card-text {
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff69b4, #9370db, #4169e1);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ff69b4, #9370db);
+}
